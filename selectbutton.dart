@@ -3,8 +3,9 @@ import 'package:select_app/kim.dart';
 
 class SelecButton extends StatelessWidget {
 
-  SelecButton(this._onTap,this._kimage);
+  SelecButton(this._onTap,this._kimage,this._where);
 
+  final bool _where;
   final VoidCallback _onTap;
   final Kim _kimage;
 
@@ -15,6 +16,7 @@ class SelecButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: Material(
+        color: _where == true ? Colors.black12 : Colors.white,
         child: InkWell(
           onTap: ()=> _onTap(),
           child: Padding(
